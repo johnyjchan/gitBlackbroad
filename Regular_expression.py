@@ -54,7 +54,7 @@ class RetrievePattern(object):
                 node.next = next_node
                 node = next_node
             else:
-                raise Exception("could not parse unsupport characters")
+                raise Exception("could not parse character")
             index += 1
         return head.next
 
