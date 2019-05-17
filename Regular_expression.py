@@ -70,11 +70,11 @@ class AutoMachine(object):
         while index < len(test_case):
             if not test_case[index] in head.options:
                 return False
+            elif test_case[index] in head.options and head.hasNext():
+                index = index + 1
+                head = head.next
             elif test_case[index] in head.options and not head.hasNext():
                 return True
-            elif test_case[index] in head.options and head.hasNext():
-                index = index+1
-                head = head.next
             else:
                 raise Exception("autoMachine timeout")
 
