@@ -47,7 +47,7 @@ class RetrievePattern(object):
             elif '(' == pattern[index]:
                 right_boundary = pattern[index:].find(')') + index
                 if -1 == right_boundary:
-                    raise Exception("could not parse ()")
+                    raise Exception("could not parse PATTERN")
                 else:
                     next_node.options = pattern[index+1:right_boundary].split('|')
                 index = right_boundary
