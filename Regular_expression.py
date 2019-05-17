@@ -68,13 +68,13 @@ class AutoMachine(object):
 
     def state_transition(self, test_case, index, head):
         while index < len(test_case):
-            if test_case[index] in head.options and not head.hasNext():
+            if not test_case[index] in head.options:
+                return False
+            elif test_case[index] in head.options and not head.hasNext():
                 return True
             elif test_case[index] in head.options and head.hasNext():
                 index = index+1
                 head = head.next
-            elif not test_case[index] in head.options:
-                return False
             else:
                 raise Exception("autoMachine timeout")
 
