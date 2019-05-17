@@ -82,9 +82,9 @@ AutoMachine = AutoMachine()
 
 
 @timer
-def stupid_regular_expression(PATTERN, TEST_CASES):
+def stupid_regular_expression_match_one(PATTERN, TEST_CASES):
     linkList_pattern = RetrievePattern.compile_pattern(PATTERN)
     for test_case in TEST_CASES:
         print(AutoMachine.load_test_case(test_case, linkList_pattern))
 
-stupid_regular_expression(PATTERN, TEST_CASES)
+stupid_regular_expression_match_one(PATTERN, TEST_CASES)
