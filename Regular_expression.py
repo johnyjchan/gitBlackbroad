@@ -23,7 +23,7 @@ def timer(func):
 class PatternNode(object):
     def __init__(self):
         self.next = None
-        self.options = None
+        self.options = []
 
     def hasNext(self):
         return True if self.next != None else False
