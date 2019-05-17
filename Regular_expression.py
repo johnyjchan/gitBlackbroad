@@ -47,14 +47,14 @@ class RetrievePattern(object):
             elif '(' == pattern[index]:
                 right_boundary = pattern[index:].find(')') + index
                 if -1 == right_boundary:
-                    raise Exception("could not parse PATTERN")
+                    raise Exception("could not parse ()")
                 else:
                     next_node.options = pattern[index+1:right_boundary].split('|')
                 index = right_boundary
                 node.next = next_node
                 node = next_node
             else:
-                raise Exception("could not parse PATTERN")
+                raise Exception("could not parse unsupport characters")
             index += 1
         return head.next
 
@@ -75,8 +75,6 @@ class AutoMachine(object):
                 head = head.next
             elif test_case[index] in head.options and not head.hasNext():
                 return True
-            else:
-                raise Exception("autoMachine timeout")
 
 
 RetrievePattern = RetrievePattern()
