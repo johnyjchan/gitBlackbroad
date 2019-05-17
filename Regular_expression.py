@@ -49,7 +49,7 @@ class RetrievePattern(object):
                     raise Exception("could not parse PATTERN")
                 else:
                     next_node.options = pattern[index+1:right_boundary + index].split('|')
-                index = right_boundary
+                index = right_boundary + index
                 node.next = next_node
                 node = next_node
             else:
